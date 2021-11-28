@@ -1,5 +1,5 @@
 ﻿
-namespace DB_SNS
+namespace on_off_proj
 {
     partial class changeData
     {

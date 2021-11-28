@@ -1,7 +1,7 @@
 ﻿
 using System.Drawing;
 
-namespace DB_SNS
+namespace on_off_proj
 {
     partial class signIn
     {
@@ -36,14 +36,14 @@ namespace DB_SNS
             this.checkBox_Remember = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button_login = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.singUpButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.textBox_id = new System.Windows.Forms.TextBox();
             this.textBox_pw = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button_login = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.singUpButton = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -80,13 +80,41 @@ namespace DB_SNS
             this.label2.TabIndex = 5;
             this.label2.Text = "PASSWORD";
             // 
+            // button_login
+            // 
+            this.button_login.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.button_login.FlatAppearance.BorderSize = 2;
+            this.button_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_login.Location = new System.Drawing.Point(293, 613);
+            this.button_login.Name = "button_login";
+            this.button_login.Size = new System.Drawing.Size(95, 58);
+            this.button_login.TabIndex = 2;
+            this.button_login.Text = "On";
+            this.button_login.UseVisualStyleBackColor = true;
+            this.button_login.Click += new System.EventHandler(this.button_login_Click);
+            // 
+            // singUpButton
+            // 
+            this.singUpButton.BackColor = System.Drawing.Color.Transparent;
+            this.singUpButton.FlatAppearance.BorderSize = 0;
+            this.singUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.singUpButton.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.singUpButton.Location = new System.Drawing.Point(293, 502);
+            this.singUpButton.Margin = new System.Windows.Forms.Padding(2);
+            this.singUpButton.Name = "singUpButton";
+            this.singUpButton.Size = new System.Drawing.Size(86, 29);
+            this.singUpButton.TabIndex = 9;
+            this.singUpButton.Text = "회원가입";
+            this.singUpButton.UseVisualStyleBackColor = false;
+            this.singUpButton.Click += new System.EventHandler(this.singUpButton_Click_1);
+            // 
             // panel3
             // 
             this.panel3.BackgroundImage = global::on_off_proj.Properties.Resources.ID_Pass6;
             this.panel3.Controls.Add(this.textBox_id);
             this.panel3.Controls.Add(this.textBox_pw);
             this.panel3.Location = new System.Drawing.Point(98, 373);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(284, 117);
             this.panel3.TabIndex = 1;
@@ -117,7 +145,7 @@ namespace DB_SNS
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(413, 312);
             this.panel1.TabIndex = 6;
@@ -127,38 +155,10 @@ namespace DB_SNS
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BackgroundImage = global::on_off_proj.Properties.Resources.온오프프1;
             this.panel2.Location = new System.Drawing.Point(202, 242);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(186, 67);
             this.panel2.TabIndex = 0;
-            // 
-            // button_login
-            // 
-            this.button_login.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
-            this.button_login.FlatAppearance.BorderSize = 2;
-            this.button_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_login.Location = new System.Drawing.Point(293, 613);
-            this.button_login.Name = "button_login";
-            this.button_login.Size = new System.Drawing.Size(95, 58);
-            this.button_login.TabIndex = 2;
-            this.button_login.Text = "On";
-            this.button_login.UseVisualStyleBackColor = true;
-            this.button_login.Click += new System.EventHandler(this.button_login_Click);
-            // 
-            // singUpButton
-            // 
-            this.singUpButton.BackColor = System.Drawing.Color.Transparent;
-            this.singUpButton.FlatAppearance.BorderSize = 0;
-            this.singUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.singUpButton.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.singUpButton.Location = new System.Drawing.Point(293, 502);
-            this.singUpButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.singUpButton.Name = "singUpButton";
-            this.singUpButton.Size = new System.Drawing.Size(86, 29);
-            this.singUpButton.TabIndex = 9;
-            this.singUpButton.Text = "회원가입";
-            this.singUpButton.UseVisualStyleBackColor = false;
-            this.singUpButton.Click += new System.EventHandler(this.singUpButton_Click);
             // 
             // signIn
             // 

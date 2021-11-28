@@ -1,11 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
-using on_off_proj;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace on_off_proj
 {
@@ -13,7 +9,7 @@ namespace on_off_proj
     {
         private List<chatListClass> chatLists = new List<chatListClass>();
         private int check = 0;
-        private string strconn = "Server=118.67.143.130;Port=3306;Database=DBP;Uid=root;Pwd=B3J5RmHYibc;Charset=utf8";
+        private string myConnection = connection.connect();
         private string userId = "";
         
         private static DBManager instance_ = new DBManager();
@@ -31,7 +27,7 @@ namespace on_off_proj
         // 해당 테이블에 값 존재하는지 확인 또는 정수 반환하는 함수 사용할 떄
         public int exists(string query)
         {
-            using (MySqlConnection conn = new MySqlConnection(strconn))
+            using (MySqlConnection conn = new MySqlConnection(myConnection))
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -44,7 +40,7 @@ namespace on_off_proj
 
         public DataTable select(string query)
         {
-            using (MySqlConnection conn = new MySqlConnection(strconn))
+            using (MySqlConnection conn = new MySqlConnection(myConnection))
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -58,7 +54,7 @@ namespace on_off_proj
 
         public void insert(string query)
         {
-            using (MySqlConnection conn = new MySqlConnection(strconn))
+            using (MySqlConnection conn = new MySqlConnection(myConnection))
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -68,7 +64,7 @@ namespace on_off_proj
         }
         public void imageInsert(string query, byte[] data)
         {
-            using (MySqlConnection conn = new MySqlConnection(strconn))
+            using (MySqlConnection conn = new MySqlConnection(myConnection))
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -83,7 +79,7 @@ namespace on_off_proj
     public DataTable readChatLog(int roomId)
         {
             string query = "SELECT * FROM Chat_History WHERE (roomId = "+roomId+");";
-            using (MySqlConnection conn = new MySqlConnection(strconn))
+            using (MySqlConnection conn = new MySqlConnection(myConnection))
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -98,7 +94,7 @@ namespace on_off_proj
 
         public void readChatList(string uID)
         {
-            using (MySqlConnection conn = new MySqlConnection(strconn))
+            using (MySqlConnection conn = new MySqlConnection(myConnection))
             {
                 conn.Open();
 

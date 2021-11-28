@@ -1,8 +1,4 @@
-﻿using DB_SNS;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace on_off_proj

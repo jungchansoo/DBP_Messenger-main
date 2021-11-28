@@ -1,12 +1,4 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace on_off_proj
@@ -27,9 +19,9 @@ namespace on_off_proj
         public void SetForm()
         {
 
-            string strconn = "Server=27.96.130.41;Database=s5727722;Uid=s5727722;Pwd=s5727722";
+            string myConnection = connection.connect();
 
-            using (MySqlConnection conn = new MySqlConnection(strconn))
+            using (MySqlConnection conn = new MySqlConnection(myConnection))
             {
                 try
                 {
@@ -40,13 +32,11 @@ namespace on_off_proj
                     while (rdr.Read())
                     {
                         textBox_CMIpassword.Text = login_pw;
-                        textBox_CMIname.Text = (string)rdr["NAME"];
-                        textBox_CMIaddress.Text = (string)rdr["ADDRESS"];
+                        textBox_CMIname.Text = rdr["NAME"].ToString();
+                        textBox_CMIaddress.Text = rdr["ADDRESS"].ToString();
 
                         
                         rdr.Close();
-                        conn.Close();
-
                     }
                 }
 

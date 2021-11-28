@@ -1,17 +1,9 @@
 ﻿using MySql.Data.MySqlClient;
-using on_off_proj;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DB_SNS
+namespace on_off_proj
 {
     public partial class changeData : Form
     {
@@ -27,7 +19,7 @@ namespace DB_SNS
             SetForm();
 
         }
-        string strconn = "Server=118.67.143.130;Port=3306;Database=DBP;Uid=root;Pwd=B3J5RmHYibc";
+        string myConnection = connection.connect();
 
 
         //USERID, USERPW,NAME,ADDRESS,NICKNAME
@@ -38,7 +30,7 @@ namespace DB_SNS
             UInt32 FileSize;
             Byte[] imgData = null;
 
-            using (MySqlConnection conn = new MySqlConnection(strconn))
+            using (MySqlConnection conn = new MySqlConnection(myConnection))
             {
                 try
                 {
@@ -90,7 +82,7 @@ namespace DB_SNS
         {
             string nickname = textBox_cgnickname.Text;
 
-            using (MySqlConnection conn = new MySqlConnection(strconn))
+            using (MySqlConnection conn = new MySqlConnection(myConnection))
             {
                 conn.Open();
                 string query = query = "UPDATE SNS SET NICKNAME='" + nickname + "' WHERE USERID ='" + login_id + "'";
@@ -118,7 +110,7 @@ namespace DB_SNS
                 ProfilePicture.Load(imgPath);
                 ProfilePicture.SizeMode = PictureBoxSizeMode.StretchImage;
 
-                using (MySqlConnection conn = new MySqlConnection(strconn))
+                using (MySqlConnection conn = new MySqlConnection(myConnection))
                 {
                     try
                     {
