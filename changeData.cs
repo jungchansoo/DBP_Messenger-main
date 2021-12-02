@@ -55,9 +55,9 @@ namespace on_off_proj
 
 
                         }
-                        catch(Exception e)
+                        catch(Exception ex)
                         {
-                            Console.WriteLine("NO Data");
+                            MessageBox.Show(ex.Message);
                             return;
                         }
                         finally

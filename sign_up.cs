@@ -47,7 +47,7 @@ namespace on_off_proj
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("DB에서 값을 가져오는 과정에서 오류가 발생하였습니다.");
+                    MessageBox.Show(ex.Message);
                 }
 
                 //비밀번호 암호화
@@ -85,7 +85,7 @@ namespace on_off_proj
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("회원가입에서 오류가 발생하였습니다.");
+                    MessageBox.Show(ex.Message);
                 }
 
             }

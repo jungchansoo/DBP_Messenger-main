@@ -61,8 +61,8 @@ namespace on_off_proj
 
                     MessageBox.Show("LOGIN SUCCESS");
                     this.Visible = false;
-                    chattingList chat = new chattingList();
-                    chat.ShowDialog();
+                    FriendList list = new FriendList(login_id);
+                    list.ShowDialog();
                     
                 }
                 else

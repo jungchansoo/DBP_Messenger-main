@@ -127,6 +127,31 @@
     <Compile Include="ClientData.cs" />
     <Compile Include="connection.cs" />
     <Compile Include="DBManager.cs" />
+    <Compile Include="add_FriendForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="add_FriendForm.Designer.cs">
+      <DependentUpon>add_FriendForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="delete_FriendForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="delete_FriendForm.Designer.cs">
+      <DependentUpon>delete_FriendForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Friend.cs" />
+    <Compile Include="FriendList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FriendList.Designer.cs">
+      <DependentUpon>FriendList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FriendListItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FriendListItem.Designer.cs">
+      <DependentUpon>FriendListItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="imageBt.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="RoundPictureBox.cs">
@@ -161,6 +186,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="chatWindow.resx">
       <DependentUpon>chatWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="add_FriendForm.resx">
+      <DependentUpon>add_FriendForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="delete_FriendForm.resx">
+      <DependentUpon>delete_FriendForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FriendList.resx">
+      <DependentUpon>FriendList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -407,7 +441,14 @@
     <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\version.txt" />
     <Content Include="packages\WindowsAPICodePack-Core.1.1.2\lib\Microsoft.WindowsAPICodePack.dll" />
     <Content Include="packages\WindowsAPICodePack-Core.1.1.2\lib\Microsoft.WindowsAPICodePack.xml" />
+    <Content Include="Resources\imoji\imoji1.png" />
+    <Content Include="Resources\imoji\imoji2.png" />
+    <Content Include="Resources\imoji\imoji3.png" />
+    <Content Include="Resources\imoji\imoji4.png" />
+    <Content Include="Resources\imoji\imoji5.png" />
+    <Content Include="Resources\imoji\imoji6.png" />
     <Content Include="Resources\profile.jpg" />
+    <None Include="Resources\search_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".vs\DBP_Messenger-main\v16\" />
