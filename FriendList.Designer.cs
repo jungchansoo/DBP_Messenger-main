@@ -103,9 +103,9 @@ namespace on_off_proj
             // 
             // button_chat
             // 
-            this.button_chat.Location = new System.Drawing.Point(12, 12);
+            this.button_chat.Location = new System.Drawing.Point(18, 10);
             this.button_chat.Name = "button_chat";
-            this.button_chat.Size = new System.Drawing.Size(75, 23);
+            this.button_chat.Size = new System.Drawing.Size(75, 27);
             this.button_chat.TabIndex = 10;
             this.button_chat.Text = "채팅";
             this.button_chat.UseVisualStyleBackColor = true;
@@ -113,9 +113,9 @@ namespace on_off_proj
             // 
             // button_addFriend
             // 
-            this.button_addFriend.Location = new System.Drawing.Point(108, 12);
+            this.button_addFriend.Location = new System.Drawing.Point(113, 10);
             this.button_addFriend.Name = "button_addFriend";
-            this.button_addFriend.Size = new System.Drawing.Size(75, 23);
+            this.button_addFriend.Size = new System.Drawing.Size(75, 27);
             this.button_addFriend.TabIndex = 11;
             this.button_addFriend.Text = "친구추가";
             this.button_addFriend.UseVisualStyleBackColor = true;
@@ -123,9 +123,9 @@ namespace on_off_proj
             // 
             // button_
             // 
-            this.button_.Location = new System.Drawing.Point(213, 12);
+            this.button_.Location = new System.Drawing.Point(213, 10);
             this.button_.Name = "button_";
-            this.button_.Size = new System.Drawing.Size(75, 23);
+            this.button_.Size = new System.Drawing.Size(75, 27);
             this.button_.TabIndex = 13;
             this.button_.Text = "추천친구";
             this.button_.UseVisualStyleBackColor = true;
